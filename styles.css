@@ -1,3 +1,37 @@
+#container {
+    display: flex
+}
+
 .red {
     border: 5px solid red;
+    height: 400px;
+    width: 100px;
+    background-color: red;
+}
+
+.blue {
+    border: 5px solid blue;
+    height: 400px;
+    width: 100px;
+    background-color: blue;
+
+}
+
+/* 1. Define the exact color sequence */
+@keyframes colorSequence {
+    0% { background-color: red; border: 5px solid red}
+    70% { background-color: yellow; border: 5px solid yellow}
+    85% { background-color: green; border: 5px solid green}
+    100% { background-color: blue; border: 5px solid blue}
+}
+
+.red:hover {
+  background-color: blue; /* Kept original */
+  transition: all 5s ease-out allow-discrete; /* Kept original */
+  rotate: 90deg; /* Kept original */
+  transform-origin: bottom right; /* Kept original */
+  border: 5px solid blue; /* Kept original */
+  
+  /* 2. Added: Loops the background color through the specified points */
+  animation: colorSequence 5s ease-out 1; 
 }
